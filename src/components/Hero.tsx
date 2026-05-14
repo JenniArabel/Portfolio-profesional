@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden border-b border-zinc-800/80 bg-gradient-to-b from-zinc-950 via-zinc-950 to-fuchsia-950/20"
+      className="relative overflow-hidden border-b border-zinc-800/80 bg-linear-to-b from-zinc-950 via-zinc-950 to-fuchsia-950/20"
     >
       <div
         className="pointer-events-none absolute -left-32 top-20 size-96 rounded-full bg-fuchsia-600/20 blur-3xl"
@@ -21,7 +21,7 @@ export function Hero() {
         </p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
           {profile.name.split(' ')[0]}{' '}
-          <span className="bg-gradient-to-r from-fuchsia-400 via-fuchsia-300 to-purple-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-fuchsia-400 via-fuchsia-300 to-purple-400 bg-clip-text text-transparent">
             {profile.name.split(' ').slice(1).join(' ')}
           </span>
         </h1>
