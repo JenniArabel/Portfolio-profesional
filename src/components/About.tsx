@@ -25,15 +25,15 @@ export function About() {
             <ul className="mt-4 space-y-3 text-sm text-zinc-300">
               <li className="flex gap-2">
                 <span className="mt-1 size-1.5 shrink-0 rounded-full bg-fuchsia-500" aria-hidden />
-                Microfrontends y Single-SPA con Angular
+                Microfrontends, Single-SPA con React y Angular
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 size-1.5 shrink-0 rounded-full bg-fuchsia-500" aria-hidden />
-                APIs REST y trabajo en Scrum
+                Consumo y manejo de APIs REST
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 size-1.5 shrink-0 rounded-full bg-fuchsia-500" aria-hidden />
-                IA en el flujo diario de desarrollo
+                Metodologías Ágiles (Scrum)
               </li>
             </ul>
           </aside>
