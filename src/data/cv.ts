@@ -98,18 +98,35 @@ export const skillGroups = [
   },
 ] as const
 
-export const education = {
-  degree: 'Técnico Superior en Desarrollo de Software',
-  institution: 'IES Manuel Belgrano 9-008',
-  period: '2023 – 2025',
-} as const
+export type EducationItem = {
+  degree: string
+  institution: string
+  period: string
+}
+
+export const education: EducationItem[] = [
+  {
+    degree: 'Técnico Superior en Desarrollo de Software',
+    institution: 'IES Manuel Belgrano 9-008',
+    period: '2023 – 2025',
+  },
+  {
+    degree: 'English B2',
+    institution: 'A.M.I.C.A.N.A',
+    period: '2012 – 2017',
+  },
+]
 
 export const certifications = [
-  'Angular: De Cero a Experto (Udemy, 2025)',
-  'Bases de Datos con SQL (Platzi, 2025)',
-  'TypeScript: Tipos avanzados y funciones (Platzi, 2024)',
-  'Git y GitHub (Oracle + Alura LATAM, 2024)',
-  'Drupal for Beginners (Udemy, 2026)',
+  'Vibe Coding desde Cero (Udemy, Mayo 2026)',
+  'Drupal for Beginners (Udemy, Febrero 2026)',
+  'Angular: De Cero a Experto (Udemy, Noviembre 2025)',
+  'Principios SOLID y Clean Code (Udemy, Junio 2025)',
+  'Git+GitHub: Todo un sistema de control de versiones de cero (Udemy, Junio 2025)',
+  'Introducción a Power BI (Santander | Open Academy, Junio 2025)',
+  'Bases de Datos con SQL (Platzi, Abril 2025)',
+  'TypeScript: Tipos avanzados y funciones (Platzi, Abril 2024)',
+  'Git y GitHub (Oracle + Alura LATAM, Febrero 2024)',
 ] as const
 
 export const softSkills = [
@@ -118,6 +135,7 @@ export const softSkills = [
   'Adaptabilidad',
   'Resolución de problemas',
   'Aprendizaje continuo',
+  'Autodidacta'
 ] as const
 
 export const navLinks = [
