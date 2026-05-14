@@ -11,7 +11,7 @@ export function Experience() {
           Roles recientes donde combino frontend, datos y automatización.
         </p>
 
-        <ol className="relative mt-12 space-y-10 before:absolute before:left-[7px] before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-fuchsia-500/60 before:via-zinc-700 before:to-transparent sm:before:left-[11px]">
+        <ol className="relative mt-12 space-y-10 before:absolute before:left-[7px] before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-linear-to-b before:from-fuchsia-500/60 before:via-zinc-700 before:to-transparent sm:before:left-[11px]">
           {experience.map((job) => (
             <li key={`${job.company}-${job.role}`} className="relative pl-8 sm:pl-12">
               <span
