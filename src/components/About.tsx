@@ -18,7 +18,7 @@ export function About() {
               <p key={index}>{paragraph}</p>
             ))}
           </div>
-          <aside className="rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/80 to-fuchsia-950/20 p-6 shadow-xl shadow-fuchsia-900/10">
+          <aside className="rounded-2xl border border-zinc-800 bg-linear-to-br from-zinc-900/80 to-fuchsia-950/20 p-6 shadow-xl shadow-fuchsia-900/10">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-fuchsia-300">
               Resumen rápido
             </h3>
