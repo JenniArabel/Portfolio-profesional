@@ -6,6 +6,7 @@ export const profile = {
   email: 'jennifer.arabel@gmail.com',
   phone: '+56 9 3025 4223',
   linkedin: 'https://www.linkedin.com/in/jenniferarabel',
+  github: 'https://github.com/JenniArabel',
   summary: [
     'Frontend Developer Junior con experiencia en Angular y arquitectura de microfrontends, enfocada en construir aplicaciones escalables, mantenibles y alineadas a buenas prácticas.',
     'Integro herramientas de Inteligencia Artificial en mi flujo de trabajo diario para optimizar el desarrollo, automatizar tareas y mejorar la productividad.',

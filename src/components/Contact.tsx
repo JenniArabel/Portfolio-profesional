@@ -11,7 +11,7 @@ export function Contact() {
           ¿Tienes un proyecto o una oportunidad? Escríbeme por el canal que prefieras.
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <a
             href={`mailto:${profile.email}`}
             className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
@@ -23,6 +23,7 @@ export function Contact() {
               {profile.email}
             </p>
           </a>
+
           <a
             href={`tel:${profile.phone.replace(/\s/g, '')}`}
             className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
@@ -34,17 +35,32 @@ export function Contact() {
               {profile.phone}
             </p>
           </a>
+
           <a
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500 sm:col-span-2 lg:col-span-1"
+            className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
               LinkedIn
             </span>
             <p className="mt-2 text-sm font-medium text-white group-hover:text-fuchsia-200">
               linkedin.com/in/jenniferarabel
+            </p>
+          </a>
+
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
+          >
+            <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
+              GitHub
+            </span>
+            <p className="mt-2 text-sm font-medium text-white group-hover:text-fuchsia-200">
+              github.com/JenniArabel
             </p>
           </a>
         </div>
