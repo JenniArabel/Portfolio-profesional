@@ -1,14 +1,14 @@
 export const profile = {
   name: 'Jennifer Arabel',
   title: 'Frontend Developer',
-  headline: 'Angular · TypeScript · Microfrontends',
+  headline: 'React · Angular · TypeScript · Microfrontends',
   location: 'Curicó, Chile',
   email: 'jennifer.arabel@gmail.com',
   phone: '+56 9 3025 4223',
   linkedin: 'https://www.linkedin.com/in/jenniferarabel',
   github: 'https://github.com/JenniArabel',
   summary: [
-    'Frontend Developer Junior con experiencia en Angular y arquitectura de microfrontends, enfocada en construir aplicaciones escalables, mantenibles y alineadas a buenas prácticas.',
+    'Frontend Developer Junior con experiencia en React, Angular y arquitectura de microfrontends, enfocada en construir aplicaciones escalables, mantenibles y alineadas a buenas prácticas.',
     'Integro herramientas de Inteligencia Artificial en mi flujo de trabajo diario para optimizar el desarrollo, automatizar tareas y mejorar la productividad.',
     'Experiencia en desarrollo de interfaces modernas, integración de APIs REST y trabajo en entornos ágiles (Scrum), aplicando principios de Clean Code y SOLID.',
   ],
@@ -27,7 +27,7 @@ export const experience: ExperienceItem[] = [
     company: 'Moby Digital',
     period: 'Junio 2025 – Actualidad',
     highlights: [
-      'Desarrollo de aplicaciones bajo arquitectura de microfrontends con Angular y Single-SPA.',
+      'Desarrollo de aplicaciones bajo arquitectura de microfrontends con React, Angular y Single-SPA.',
       'Interfaces responsivas y reutilizables con HTML5, CSS3, TypeScript, Bootstrap y Tailwind CSS.',
       'Integración de APIs REST con gestión clara de datos y comunicación con backend.',
       'Buenas prácticas (Clean Code, SOLID) para mejorar la mantenibilidad del código.',
