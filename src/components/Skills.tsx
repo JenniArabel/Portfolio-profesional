@@ -1,4 +1,4 @@
-import { certifications, skillGroups, softSkills } from '../data/cv'
+import { skillGroups, softSkills } from '../data/cv'
 
 export function Skills() {
   return (
@@ -33,17 +33,7 @@ export function Skills() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/60 to-fuchsia-950/10 p-6 sm:p-8">
-            <h3 className="font-display text-lg font-semibold text-white">Certificaciones</h3>
-            <ul className="mt-4 space-y-3 text-sm text-zinc-400">
-              {certifications.map((c) => (
-                <li key={c} className="flex gap-3 border-l-2 border-fuchsia-500/40 pl-3">
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-12">
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-8">
             <h3 className="font-display text-lg font-semibold text-white">Soft skills</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
