@@ -3,14 +3,34 @@
 @theme {
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: #09090b;
+  --color-surface-card: #18181b;
+  --color-surface-hover: #27272a;
+  --color-text-heading: #ffffff;
+  --color-text-body: #e4e4e7;
+  --color-text-muted: #a1a1aa;
+  --color-text-subtle: #71717a;
+  --color-border: #27272a;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+html.light {
+  --color-surface: #ffffff;
+  --color-surface-card: #f4f4f5;
+  --color-surface-hover: #e4e4e7;
+  --color-text-heading: #18181b;
+  --color-text-body: #3f3f46;
+  --color-text-muted: #52525b;
+  --color-text-subtle: #a1a1aa;
+  --color-border: #e4e4e7;
+}
+
 body {
-  @apply bg-zinc-950 text-zinc-300 antialiased;
+  @apply bg-surface text-text-body antialiased;
 }
 
 ::selection {

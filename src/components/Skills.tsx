@@ -2,12 +2,12 @@ import { skillGroups, softSkills } from '../data/cv'
 
 export function Skills() {
   return (
-    <section id="habilidades" className="scroll-mt-24 border-b border-zinc-800/80 bg-zinc-950 py-16 sm:py-20 lg:py-24">
+    <section id="habilidades" className="scroll-mt-24 border-b border-border/80 bg-surface py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+        <h2 className="font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl">
           Skills técnicas
         </h2>
-        <p className="mt-3 max-w-2xl text-zinc-400">
+        <p className="mt-3 max-w-2xl text-text-muted">
           Stack y herramientas alineadas a desarrollo frontend, integración y calidad de código.
         </p>
 
@@ -15,7 +15,7 @@ export function Skills() {
           {skillGroups.map((group) => (
             <div
               key={group.label}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6"
+              className="rounded-2xl border border-border bg-surface-card/30 p-6"
             >
               <h3 className="text-sm font-semibold uppercase tracking-wider text-fuchsia-300/90">
                 {group.label}
@@ -23,7 +23,7 @@ export function Skills() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li key={item}>
-                    <span className="inline-flex rounded-lg border border-zinc-700/80 bg-zinc-950/80 px-3 py-1.5 text-xs font-medium text-zinc-200">
+                    <span className="inline-flex rounded-lg border border-border/80 bg-surface/80 px-3 py-1.5 text-xs font-medium text-text-body">
                       {item}
                     </span>
                   </li>
@@ -34,8 +34,8 @@ export function Skills() {
         </div>
 
         <div className="mt-12">
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-8">
-            <h3 className="font-display text-lg font-semibold text-white">Soft skills</h3>
+          <div className="rounded-2xl border border-border bg-surface-card/30 p-6 sm:p-8">
+            <h3 className="font-display text-lg font-semibold text-text-heading">Soft skills</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {softSkills.map((s) => (
                 <li key={s}>
