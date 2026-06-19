@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-jennifer-arabel.vercel.app/sitemap.xml
