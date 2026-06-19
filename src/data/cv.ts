@@ -19,6 +19,7 @@ export type ExperienceItem = {
   company: string
   period: string
   highlights: string[]
+  geoSummary: string
 }
 
 export const experience: ExperienceItem[] = [
@@ -35,6 +36,8 @@ export const experience: ExperienceItem[] = [
       'Control de versiones con Git, GitFlow y Bitbucket.',
       'IA para optimizar desarrollo, debugging y generación de código; automatización de tareas repetitivas.',
     ],
+    geoSummary:
+      'Desarrollo aplicaciones con microfrontends usando React, Angular y Single-SPA. Integro APIs REST, aplico Clean Code y SOLID, y trabajo bajo Scrum.',
   },
   {
     role: 'Data Analyst',
@@ -46,6 +49,8 @@ export const experience: ExperienceItem[] = [
       'Reportes y visualizaciones de métricas clave.',
       'Soporte a plataformas digitales y gestión de información.',
     ],
+    geoSummary:
+      'Analicé datos operativos para optimizar rutas y estrategias de pricing en el sector de transporte. Generé reportes y visualizaciones para la toma de decisiones estratégicas.',
   },
   {
     role: 'Chatbot Developer',
@@ -58,6 +63,8 @@ export const experience: ExperienceItem[] = [
       'Workflows basados en eventos y reglas de negocio multicanal.',
       'Optimización de procesos de contacto con clientes mediante automatización.',
     ],
+    geoSummary:
+      'Desarrollé chatbots de atención al cliente con n8n e integré flujos automatizados multicanal (email, WhatsApp y llamadas) con bases de datos de clientes.',
   },
 ]
 

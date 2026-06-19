@@ -1,4 +1,4 @@
-import { profile, skillGroups, education, certifications } from '../data/cv'
+import { profile, skillGroups, education, certifications, experience, softSkills } from '../data/cv'
 
 const url = 'https://portfolio-jennifer-arabel.vercel.app'
 
@@ -40,6 +40,81 @@ const websiteSchema = {
   inLanguage: 'es-CL',
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Quién es Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: profile.summary.join(' '),
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué tecnologías domina Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: skills.join(', ') + '.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Dónde trabaja Jennifer Arabel actualmente?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${experience[0].role} en ${experience[0].company} (${experience[0].period}). ${experience[0].geoSummary}`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué experiencia laboral tiene Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: experience
+          .map((e) => `${e.role} en ${e.company} (${e.period}): ${e.geoSummary}`)
+          .join(' '),
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué certificaciones tiene Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: certifications.join(', ') + '.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Dónde está ubicada Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: profile.location,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué estudió Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: education
+          .map((e) => `${e.degree} en ${e.institution} (${e.period})`)
+          .join(', ') + '.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuáles son las habilidades blandas de Jennifer Arabel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: softSkills.join(', ') + '.',
+      },
+    },
+  ],
+}
+
 export function Seo() {
   return (
     <>
@@ -50,6 +125,10 @@ export function Seo() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   )

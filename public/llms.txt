@@ -1,0 +1,54 @@
+# Jennifer Arabel — Frontend Developer
+
+> Frontend Developer especializada en React, Angular, TypeScript y
+> microfrontends. Curicó, Chile.
+
+## Profile
+- Role: Frontend Developer Junior
+- Location: Curicó, Chile
+- Email: jennifer.arabel@gmail.com
+- LinkedIn: https://www.linkedin.com/in/jenniferarabel
+- GitHub: https://github.com/JenniArabel
+
+## Experience
+- **Frontend Developer Junior** — Moby Digital (Junio 2025–presente)
+  Microfrontends (React, Angular, Single-SPA), APIs REST, Scrum, Clean Code, SOLID.
+- **Data Analyst** — Andesmar (Mayo 2025–Mayo 2026)
+  Análisis de datos, optimización de rutas, reportes y visualizaciones.
+- **Chatbot Developer** — Moby Digital (Febrero 2026)
+  Chatbots con n8n, automatización multicanal (email, WhatsApp, llamadas).
+
+## Skills
+- **Lenguajes:** JavaScript, TypeScript, HTML5, CSS3
+- **Frameworks/UI:** Angular, React, Tailwind CSS, Bootstrap, PrimeNG
+- **Backend:** Java, Spring Boot, MySQL, JPA, Hibernate
+- **Arquitectura:** Microfrontends, Single-SPA, REST APIs
+- **Herramientas:** Git, GitFlow, Bitbucket, Postman, DBeaver, Trello, n8n, Scrum, Kanban
+- **IA:** AI-assisted coding, debugging asistido, automatización de procesos
+
+## Education
+- Técnico Superior en Desarrollo de Software — IES Manuel Belgrano 9-008 (2023–2025)
+- English B2 — A.M.I.C.A.N.A (2012–2017)
+
+## Certifications
+- Vibe Coding desde Cero (Udemy, 2026)
+- Drupal for Beginners (Udemy, 2026)
+- Angular: De Cero a Experto (Udemy, 2025)
+- Principios SOLID y Clean Code (Udemy, 2025)
+- Git+GitHub (Udemy, 2025)
+- Introducción a Power BI (Santander, 2025)
+- Bases de Datos con SQL (Platzi, 2025)
+- TypeScript (Platzi, 2024)
+- Git y GitHub (Oracle + Alura, 2024)
+
+## Soft Skills
+Trabajo en equipo, comunicación efectiva, adaptabilidad,
+resolución de problemas, aprendizaje continuo, autodidacta.
+
+## Site sections
+- Inicio: /
+- Perfil: /#sobre-mi
+- Experiencia: /#experiencia
+- Habilidades: /#habilidades
+- Formación: /#formacion
+- Contacto: /#contacto
