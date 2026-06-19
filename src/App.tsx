@@ -5,6 +5,7 @@ import { Education } from './components/Education'
 import { Experience } from './components/Experience'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { InteractiveBanner } from './components/InteractiveBanner'
 import { Navbar } from './components/Navbar'
 import { Seo } from './components/Seo'
 import { Skills } from './components/Skills'
@@ -22,6 +23,7 @@ function App() {
         </a>
         <Navbar />
         <main>
+          <InteractiveBanner />
           <Hero />
           <About />
           <Experience />
