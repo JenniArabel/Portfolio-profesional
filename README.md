@@ -36,11 +36,26 @@ npm run lint   # Ejecuta ESLint
 | Recurso | Ubicación | Descripción |
 |---------|-----------|-------------|
 | Meta tags (OG, Twitter, canonical) | `index.html` | Definidos estáticamente en el `<head>` |
-| Structured data (JSON-LD) | `src/components/Seo.tsx` | Schema `Person` y `WebSite`, datos desde `src/data/cv.ts` |
+| Structured data (JSON-LD) | `src/components/Seo.tsx` | Schema `Person`, `WebSite` y `FAQPage` (8 pares Q&A), datos desde `src/data/cv.ts` |
+| Optimización GEO / IA | `public/llms.txt` | Markdown estructurado para crawlers de ChatGPT, Claude y Perplexity |
 | `robots.txt` | `public/robots.txt` | Permite crawlers, apunta al sitemap |
 | `sitemap.xml` | `public/sitemap.xml` | Una entrada con prioridad 1.0 |
 
 Para validar el structured data: [Rich Results Test](https://search.google.com/test/rich-results).
+
+## Dominio
+
+El dominio canónico es `https://portfolio-jennifer-arabel.vercel.app/`. Si cambia, actualizar en `index.html` (canonical + OG), `public/robots.txt`, `public/sitemap.xml` y `src/components/Seo.tsx`.
+
+## Optimización para IA generativa (GEO)
+
+Este portfolio está optimizado para motores de IA generativa (ChatGPT, Claude, Perplexity, Google AI Overviews):
+
+| Recurso | Propósito |
+|---------|-----------|
+| `public/llms.txt` | Archivo de lectura para crawlers de IA (`/llms.txt`) |
+| `FAQPage` schema | 8 preguntas y respuestas extraíbles por motores generativos |
+| `geoSummary` en `cv.ts` | Resúmenes en prosa por experiencia para citas textuales de IA |
 
 ## Desarrollo
 
