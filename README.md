@@ -31,6 +31,17 @@ npm run preview # Previsualiza el build localmente
 npm run lint   # Ejecuta ESLint
 ```
 
+## SEO
+
+| Recurso | Ubicación | Descripción |
+|---------|-----------|-------------|
+| Meta tags (OG, Twitter, canonical) | `index.html` | Definidos estáticamente en el `<head>` |
+| Structured data (JSON-LD) | `src/components/Seo.tsx` | Schema `Person` y `WebSite`, datos desde `src/data/cv.ts` |
+| `robots.txt` | `public/robots.txt` | Permite crawlers, apunta al sitemap |
+| `sitemap.xml` | `public/sitemap.xml` | Una entrada con prioridad 1.0 |
+
+Para validar el structured data: [Rich Results Test](https://search.google.com/test/rich-results).
+
 ## Desarrollo
 
 Tras `npm install`, ejecuta `npm run dev` y abre la URL que indique la terminal (por defecto suele ser `http://localhost:5173`).
