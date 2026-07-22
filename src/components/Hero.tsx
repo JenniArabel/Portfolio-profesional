@@ -1,6 +1,10 @@
 import { profile } from '../data/cv'
+import { useLanguage } from '../i18n/LanguageContext'
+import { DownloadCvButton } from './DownloadCvButton'
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="inicio"
@@ -17,7 +21,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-fuchsia-400/90">
-          Portfolio profesional
+          {t('hero.portfolio')}
         </p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-text-heading sm:text-5xl lg:text-6xl">
           {profile.name.split(' ')[0]}{' '}
@@ -37,14 +41,15 @@ export function Hero() {
             href="#contacto"
             className="inline-flex items-center justify-center rounded-xl bg-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/25 transition hover:bg-fuchsia-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
           >
-            Contactar
+            {t('hero.contact')}
           </a>
           <a
             href="#experiencia"
             className="inline-flex items-center justify-center rounded-xl border border-border bg-surface-card/50 px-5 py-3 text-sm font-semibold text-text-heading transition hover:border-fuchsia-500/50 hover:text-fuchsia-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
-            Ver experiencia
+            {t('hero.viewExperience')}
           </a>
+          <DownloadCvButton />
         </div>
       </div>
     </section>

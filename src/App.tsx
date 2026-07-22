@@ -1,4 +1,5 @@
 import { ThemeProvider } from './ThemeContext'
+import { useLanguage } from './i18n/LanguageContext'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Education } from './components/Education'
@@ -11,6 +12,8 @@ import { Seo } from './components/Seo'
 import { Skills } from './components/Skills'
 
 function App() {
+  const { t } = useLanguage()
+
   return (
     <ThemeProvider>
       <Seo />
@@ -19,7 +22,7 @@ function App() {
           href="#inicio"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-fuchsia-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
         >
-          Saltar al contenido
+          {t('skipLink')}
         </a>
         <Navbar />
         <main>

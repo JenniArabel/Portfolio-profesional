@@ -1,14 +1,17 @@
 import { profile } from '../data/cv'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function Contact() {
+  const { t } = useLanguage()
+
   return (
     <section id="contacto" className="scroll-mt-24 bg-surface py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl">
-          Contacto
+          {t('contact.title')}
         </h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          ¿Tienes un proyecto o una oportunidad? Escríbeme por el canal que prefieras.
+          {t('contact.description')}
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -17,7 +20,7 @@ export function Contact() {
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
-              Email
+              {t('contact.email')}
             </span>
             <p className="mt-2 break-all text-sm font-medium text-text-heading group-hover:text-fuchsia-200">
               {profile.email}
@@ -29,7 +32,7 @@ export function Contact() {
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
-              Teléfono
+              {t('contact.phone')}
             </span>
             <p className="mt-2 text-sm font-medium text-text-heading group-hover:text-fuchsia-200">
               {profile.phone}
@@ -43,7 +46,7 @@ export function Contact() {
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
-              LinkedIn
+              {t('contact.linkedin')}
             </span>
             <p className="mt-2 text-sm font-medium text-text-heading group-hover:text-fuchsia-200">
               linkedin.com/in/jenniferarabel
@@ -57,7 +60,7 @@ export function Contact() {
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
-              GitHub
+              {t('contact.github')}
             </span>
             <p className="mt-2 text-sm font-medium text-text-heading group-hover:text-fuchsia-200">
               github.com/JenniArabel
