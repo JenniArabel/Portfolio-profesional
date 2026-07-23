@@ -1,18 +1,20 @@
-import { skillGroups, softSkills } from '../data/cv'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function Skills() {
+  const { t, data } = useLanguage()
+
   return (
     <section id="habilidades" className="scroll-mt-24 border-b border-border/80 bg-surface py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl">
-          Skills técnicas
+          {t('skills.title')}
         </h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          Stack y herramientas alineadas a desarrollo frontend, integración y calidad de código.
+          {t('skills.description')}
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {skillGroups.map((group) => (
+          {data.skillGroups.map((group) => (
             <div
               key={group.label}
               className="rounded-2xl border border-border bg-surface-card/30 p-6"
@@ -35,9 +37,9 @@ export function Skills() {
 
         <div className="mt-12">
           <div className="rounded-2xl border border-border bg-surface-card/30 p-6 sm:p-8">
-            <h3 className="font-display text-lg font-semibold text-text-heading">Soft skills</h3>
+            <h3 className="font-display text-lg font-semibold text-text-heading">{t('skills.softSkills')}</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {softSkills.map((s) => (
+              {data.softSkills.map((s) => (
                 <li key={s}>
                   <span className="inline-flex rounded-full bg-fuchsia-500/10 px-4 py-2 text-xs font-medium text-fuchsia-200 ring-1 ring-inset ring-fuchsia-500/25">
                     {s}

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 type Particle = {
   id: number
@@ -42,6 +43,7 @@ function createParticles(): Particle[] {
 const ANIMATION_DURATION = 1100
 
 export function InteractiveBanner() {
+  const { t } = useLanguage()
   const [count, setCount] = useState(() => {
     try {
       return Number(localStorage.getItem('boost-count')) || 0
@@ -69,7 +71,7 @@ export function InteractiveBanner() {
     setCount(newCount)
     try {
       localStorage.setItem('boost-count', String(newCount))
-    } catch {}
+    } catch { /* empty */ }
 
     const w = window as { dataLayer?: Record<string, unknown>[] }
     w.dataLayer?.push({
@@ -128,10 +130,10 @@ export function InteractiveBanner() {
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
           <div className="text-center sm:text-left">
             <p className="font-display text-lg font-semibold text-text-heading">
-              ¿Me ayudas a crecer?
+              {t('interactiveBanner.title')}
             </p>
             <p className="mt-0.5 text-sm text-text-muted">
-                Interactúa con este botón y genera datos para mi{' '}
+              {t('interactiveBanner.description')}{' '}
               <span className="font-medium text-fuchsia-400/80">Google Analytics</span>
             </p>
           </div>
@@ -145,7 +147,7 @@ export function InteractiveBanner() {
               <span className="inline-block transition-transform duration-200 group-hover:scale-110">
                 ✨
               </span>
-              Dale impulso
+              {t('interactiveBanner.button')}
             </span>
           </button>
         </div>
