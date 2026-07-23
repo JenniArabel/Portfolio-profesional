@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react'
 import { profile } from '../data/cv'
 import { useLanguage } from '../i18n/LanguageContext'
+import { trackEvent } from '../hooks/useTrack'
 
 export function DownloadCvButton() {
   const generating = useRef(false)
@@ -9,6 +10,7 @@ export function DownloadCvButton() {
   const handleDownload = useCallback(async () => {
     if (generating.current) return
     generating.current = true
+    trackEvent('download_cv')
 
     const { jsPDF } = await import('jspdf')
 

@@ -1,4 +1,5 @@
 import { profile } from '../data/cv'
+import { trackEvent } from '../hooks/useTrack'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export function Contact() {
@@ -17,6 +18,7 @@ export function Contact() {
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <a
             href={`mailto:${profile.email}`}
+            onClick={() => trackEvent('click_social', { network: 'email' })}
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
@@ -29,6 +31,7 @@ export function Contact() {
 
           <a
             href={`tel:${profile.phone.replace(/\s/g, '')}`}
+            onClick={() => trackEvent('click_social', { network: 'phone' })}
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
@@ -43,6 +46,7 @@ export function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
+            onClick={() => trackEvent('click_social', { network: 'linkedin' })}
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">
@@ -57,6 +61,7 @@ export function Contact() {
             href={profile.github}
             target="_blank"
             rel="noreferrer noopener"
+            onClick={() => trackEvent('click_social', { network: 'github' })}
             className="group rounded-2xl border border-border bg-surface-card/40 p-6 transition hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-fuchsia-400/90">

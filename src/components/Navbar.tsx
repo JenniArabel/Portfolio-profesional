@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useTheme } from '../ThemeContext'
+import { trackEvent } from '../hooks/useTrack'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -37,6 +38,7 @@ export function Navbar() {
             <a
               key={link.id}
               href={`#${link.id}`}
+              onClick={() => trackEvent('click_nav', { section: link.id })}
               className="rounded-lg px-3 py-2 text-sm text-text-muted transition hover:bg-surface-card hover:text-fuchsia-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
             >
               {link.label}
@@ -108,7 +110,10 @@ export function Navbar() {
                 key={link.id}
                 href={`#${link.id}`}
                 className="rounded-lg px-3 py-3 text-sm text-text-muted hover:bg-surface-card hover:text-fuchsia-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  trackEvent('click_nav', { section: link.id })
+                }}
               >
                 {link.label}
               </a>

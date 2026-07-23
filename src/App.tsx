@@ -10,8 +10,10 @@ import { InteractiveBanner } from './components/InteractiveBanner'
 import { Navbar } from './components/Navbar'
 import { Seo } from './components/Seo'
 import { Skills } from './components/Skills'
+import { useScrollDepth } from './hooks/useScrollDepth'
 
 function App() {
+  useScrollDepth()
   const { t } = useLanguage()
 
   return (

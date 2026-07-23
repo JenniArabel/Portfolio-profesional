@@ -1,6 +1,7 @@
 import { profile } from '../data/cv'
 import { useLanguage } from '../i18n/LanguageContext'
 import { DownloadCvButton } from './DownloadCvButton'
+import { trackEvent } from '../hooks/useTrack'
 
 export function Hero() {
   const { t } = useLanguage()
@@ -39,12 +40,14 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#contacto"
+            onClick={() => trackEvent('click_cta', { cta: 'contactar' })}
             className="inline-flex items-center justify-center rounded-xl bg-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/25 transition hover:bg-fuchsia-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
           >
             {t('hero.contact')}
           </a>
           <a
             href="#experiencia"
+            onClick={() => trackEvent('click_cta', { cta: 'ver_experiencia' })}
             className="inline-flex items-center justify-center rounded-xl border border-border bg-surface-card/50 px-5 py-3 text-sm font-semibold text-text-heading transition hover:border-fuchsia-500/50 hover:text-fuchsia-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500"
           >
             {t('hero.viewExperience')}
