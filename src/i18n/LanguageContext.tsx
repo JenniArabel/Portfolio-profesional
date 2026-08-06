@@ -82,7 +82,7 @@ function getInitialLocale(): Locale {
   return 'es'
 }
 
-function createT(ui: UiStrings): (key: string) => string {
+export function createT(ui: UiStrings): (key: string) => string {
   return (key: string) => {
     const keys = key.split('.')
     let result: unknown = ui
