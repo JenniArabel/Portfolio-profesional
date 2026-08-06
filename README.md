@@ -26,26 +26,40 @@ Tipografías del sitio: [DM Sans](https://fonts.google.com/specimen/DM+Sans) y [
 ```bash
 npm install    # Instala dependencias
 npm run dev    # Servidor de desarrollo con recarga en caliente
-npm run build  # Compilación para producción
+npm run build  # Compilación para producción (client + SSR bundle + prerender estático por idioma)
 npm run preview # Previsualiza el build localmente
 npm run lint   # Ejecuta ESLint
 ```
+
+## Rutas por idioma y prerender (SEO)
+
+El sitio sirve dos URLs indexables por Google:
+
+| Ruta | Idioma | HTML servido |
+|------|--------|--------------|
+| `/` | Español (canonical) | `dist/index.html` |
+| `/en` | Inglés | `dist/en/index.html` |
+
+- El idioma se detecta desde la URL (`localeFromPathname`), con fallback a `localStorage['locale']`.
+- El toggle ES/EN en `Navbar` cambia la URL con `history.replaceState` y el contenido al instante.
+- `npm run build` genera HTML estático por idioma con `lang`, meta (og:locale, canonical, hreflang), JSON-LD (`Person`, `WebSite`, `FAQPage`) y contenido visible ya renderizado (mejor indexación y GEO).
+- `vercel.json` configura los rewrites para `/en` y el fallback SPA.
 
 ## SEO
 
 | Recurso | Ubicación | Descripción |
 |---------|-----------|-------------|
-| Meta tags (OG, Twitter, canonical) | `index.html` | Definidos estáticamente en el `<head>` |
-| Structured data (JSON-LD) | `src/components/Seo.tsx` | Schema `Person`, `WebSite` y `FAQPage` (8 pares Q&A), datos desde `src/data/cv.ts` |
+| Meta tags (OG, Twitter, canonical) | `index.html` + `src/i18n/meta.ts` | Definidos estáticamente y por idioma |
+| Structured data (JSON-LD) | `src/seo/schemas.ts` | Schema `Person`, `WebSite` y `FAQPage`, consumido por `Seo.tsx` y el prerender |
 | Optimización GEO / IA | `public/llms.txt` | Markdown estructurado para crawlers de ChatGPT, Claude y Perplexity |
 | `robots.txt` | `public/robots.txt` | Permite crawlers, apunta al sitemap |
-| `sitemap.xml` | `public/sitemap.xml` | Una entrada con prioridad 1.0 |
+| `sitemap.xml` | `public/sitemap.xml` | Dos URLs con alternates `hreflang` |
 
 Para validar el structured data: [Rich Results Test](https://search.google.com/test/rich-results).
 
 ## Dominio
 
-El dominio canónico es `https://portfolio-jennifer-arabel.vercel.app/`. Si cambia, actualizar en `index.html` (canonical + OG), `public/robots.txt`, `public/sitemap.xml` y `src/components/Seo.tsx`.
+El dominio canónico es `https://portfolio-jennifer-arabel.vercel.app/`. Si cambia, actualizar en `index.html` (canonical + OG), `public/robots.txt`, `public/sitemap.xml`, `src/seo/schemas.ts` y `src/i18n/meta.ts`.
 
 ## Optimización para IA generativa (GEO)
 

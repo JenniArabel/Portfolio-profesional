@@ -11,6 +11,7 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'dark'
   const saved = localStorage.getItem('theme')
   if (saved === 'light' || saved === 'dark') return saved
   if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light'

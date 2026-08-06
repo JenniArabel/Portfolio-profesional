@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createT, type UiStrings } from './LanguageContext'
+import { createT, localeFromPathname, localePath, type UiStrings } from './LanguageContext'
 
 const ui: UiStrings = {
   skipLink: 'Saltar al contenido',
@@ -73,5 +73,29 @@ describe('createT', () => {
 
   it('returns the raw key for an empty key', () => {
     expect(t('')).toBe('')
+  })
+})
+
+describe('localeFromPathname', () => {
+  it('detects en from /en and nested paths', () => {
+    expect(localeFromPathname('/en')).toBe('en')
+    expect(localeFromPathname('/en/#inicio')).toBe('en')
+  })
+
+  it('detects es from /es and nested paths', () => {
+    expect(localeFromPathname('/es')).toBe('es')
+    expect(localeFromPathname('/es#inicio')).toBe('es')
+  })
+
+  it('returns null for the root path and unknown paths', () => {
+    expect(localeFromPathname('/')).toBeNull()
+    expect(localeFromPathname('/contacto')).toBeNull()
+  })
+})
+
+describe('localePath', () => {
+  it('maps es to root and en to /en', () => {
+    expect(localePath('es')).toBe('/')
+    expect(localePath('en')).toBe('/en')
   })
 })

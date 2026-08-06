@@ -2,9 +2,16 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { ui as esUi, data as esData } from './es'
 import { ui as enUi, data as enData } from './en'
+import { meta } from './meta'
 import { trackEvent } from '../hooks/useTrack'
 
 export type Locale = 'es' | 'en'
+
+export function localeFromPathname(pathname: string): Locale | null {
+  if (pathname.startsWith('/en')) return 'en'
+  if (pathname.startsWith('/es')) return 'es'
+  return null
+}
 
 export type TranslationData = {
   summary: string[]
@@ -76,10 +83,18 @@ const LanguageContext = createContext<LanguageContextValue | null>(null)
 const uiMap: Record<Locale, UiStrings> = { es: esUi, en: enUi }
 const dataMap: Record<Locale, TranslationData> = { es: esData, en: enData }
 
-function getInitialLocale(): Locale {
+function getInitialLocale(preferred?: Locale): Locale {
+  if (preferred === 'es' || preferred === 'en') return preferred
+  if (typeof window === 'undefined') return 'es'
+  const fromPath = localeFromPathname(window.location.pathname)
+  if (fromPath) return fromPath
   const saved = localStorage.getItem('locale') as Locale | null
   if (saved === 'es' || saved === 'en') return saved
   return 'es'
+}
+
+export function localePath(locale: Locale): string {
+  return locale === 'en' ? '/en' : '/'
 }
 
 export function createT(ui: UiStrings): (key: string) => string {
@@ -94,12 +109,29 @@ export function createT(ui: UiStrings): (key: string) => string {
   }
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale)
+export function LanguageProvider({
+  children,
+  initialLocale,
+}: {
+  children: ReactNode
+  initialLocale?: Locale
+}) {
+  const [locale, setLocaleState] = useState<Locale>(() => getInitialLocale(initialLocale))
+
+  const setLocale = (next: Locale) => {
+    setLocaleState(next)
+    if (typeof window !== 'undefined') {
+      const path = localePath(next)
+      const current = window.location.pathname
+      if (localeFromPathname(current) !== null || current === '/') {
+        window.history.replaceState(null, '', path + window.location.hash)
+      }
+    }
+  }
 
   const value: LanguageContextValue = {
     locale,
-    setLocale: setLocaleState,
+    setLocale,
     t: createT(uiMap[locale]),
     data: dataMap[locale],
   }
@@ -108,17 +140,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('locale', locale)
     document.documentElement.lang = locale
 
-    const descMap: Record<Locale, string> = {
-      es: 'Jennifer Arabel — Frontend Developer especializada en React, Angular y TypeScript. Experiencia en microfrontends, Single-SPA y APIs REST. Curicó, Chile.',
-      en: 'Jennifer Arabel — Frontend Developer specialized in React, Angular and TypeScript. Experience in microfrontends, Single-SPA and REST APIs. Available for remote work.',
-    }
-    const title = 'Jennifer Arabel | Frontend Developer — React & Angular'
-    const desc = descMap[locale]
+    const { title, description, ogLocale } = meta[locale]
 
-    document.querySelector('meta[name="description"]')?.setAttribute('content', desc)
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', desc)
-    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', desc)
-    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', locale === 'es' ? 'es_CL' : 'en_US')
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', ogLocale)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title)
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title)
     const titleTag = document.querySelector('title')

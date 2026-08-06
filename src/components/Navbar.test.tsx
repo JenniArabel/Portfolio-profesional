@@ -24,6 +24,7 @@ afterEach(() => {
   cleanup()
   localStorage.clear()
   document.documentElement.classList.remove('light')
+  window.history.replaceState(null, '', '/')
 })
 
 describe('Navbar', () => {
@@ -52,6 +53,16 @@ describe('Navbar', () => {
 
     expect(localStorage.getItem('locale')).toBe('en')
     expect(screen.getByRole('button', { name: 'Switch to Spanish' })).toBeInTheDocument()
+  })
+
+  it('updates the URL path when the locale is switched', () => {
+    renderNavbar()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Cambiar a inglés' }))
+    expect(window.location.pathname).toBe('/en')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Switch to Spanish' }))
+    expect(window.location.pathname).toBe('/')
   })
 
   it('toggles the locale back from en to es', () => {
