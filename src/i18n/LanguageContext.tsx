@@ -2,6 +2,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { ui as esUi, data as esData } from './es'
 import { ui as enUi, data as enData } from './en'
+import { trackEvent } from '../hooks/useTrack'
 
 export type Locale = 'es' | 'en'
 
@@ -81,7 +82,7 @@ function getInitialLocale(): Locale {
   return 'es'
 }
 
-function createT(ui: UiStrings): (key: string) => string {
+export function createT(ui: UiStrings): (key: string) => string {
   return (key: string) => {
     const keys = key.split('.')
     let result: unknown = ui
@@ -108,10 +109,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = locale
 
     const descMap: Record<Locale, string> = {
-      es: 'Portfolio de Jennifer Arabel — Frontend Developer especializada en Angular, TypeScript y microfrontends. Curicó, Chile.',
-      en: 'Portfolio of Jennifer Arabel — Frontend Developer specialized in Angular, TypeScript and microfrontends. Curicó, Chile.',
+      es: 'Jennifer Arabel — Frontend Developer especializada en React, Angular y TypeScript. Experiencia en microfrontends, Single-SPA y APIs REST. Curicó, Chile.',
+      en: 'Jennifer Arabel — Frontend Developer specialized in React, Angular and TypeScript. Experience in microfrontends, Single-SPA and REST APIs. Available for remote work.',
     }
-    const title = 'Jennifer Arabel | Frontend Developer'
+    const title = 'Jennifer Arabel | Frontend Developer — React & Angular'
     const desc = descMap[locale]
 
     document.querySelector('meta[name="description"]')?.setAttribute('content', desc)
@@ -122,6 +123,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title)
     const titleTag = document.querySelector('title')
     if (titleTag) titleTag.textContent = title
+
+    trackEvent('virtual_page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+    })
   }, [locale])
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>

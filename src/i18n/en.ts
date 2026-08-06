@@ -203,5 +203,20 @@ export const data: TranslationData = {
       question: 'What are Jennifer Arabel\'s soft skills?',
       answer: 'Teamwork, Effective Communication, Adaptability, Problem Solving, Continuous Learning, Self-taught.',
     },
+    {
+      question: 'Is Jennifer Arabel available for hire?',
+      answer:
+        'Yes, Jennifer Arabel is open to new opportunities as a Frontend Developer, both remote and hybrid positions in Chile or internationally. Contact her at jennifer.arabel@gmail.com or via LinkedIn.',
+    },
+    {
+      question: 'Does Jennifer Arabel work remotely?',
+      answer:
+        'Yes, Jennifer has experience working with distributed teams and is available for remote or hybrid positions. She is based in Curicó, Chile.',
+    },
+    {
+      question: 'What kind of projects is Jennifer Arabel looking for?',
+      answer:
+        'Frontend development projects with React or Angular, preferably with modern architectures such as microfrontends or SPA, agile teams, and software engineering best practices.',
+    },
   ],
 }

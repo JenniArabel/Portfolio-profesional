@@ -204,5 +204,20 @@ export const data: TranslationData = {
       answer:
         'Trabajo en equipo, Comunicación efectiva, Adaptabilidad, Resolución de problemas, Aprendizaje continuo, Autodidacta.',
     },
+    {
+      question: '¿Jennifer Arabel está disponible para trabajar?',
+      answer:
+        'Sí, Jennifer Arabel está abierta a nuevas oportunidades laborales como Frontend Developer, tanto en modalidad remota como híbrida en Chile. Puede contactarla en jennifer.arabel@gmail.com o mediante su perfil de LinkedIn.',
+    },
+    {
+      question: '¿Jennifer Arabel trabaja de forma remota?',
+      answer:
+        'Sí, Jennifer tiene experiencia trabajando en equipos distribuidos y acepta posiciones remotas o híbridas. Está ubicada en Curicó, Chile.',
+    },
+    {
+      question: '¿Qué tipo de proyectos busca Jennifer Arabel?',
+      answer:
+        'Proyectos de desarrollo frontend con React o Angular, preferentemente con arquitecturas modernas como microfrontends o SPA, equipos ágiles y buenas prácticas de ingeniería de software.',
+    },
   ],
 }

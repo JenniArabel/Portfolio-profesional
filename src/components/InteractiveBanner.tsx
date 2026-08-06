@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
+import { trackEvent } from '../hooks/useTrack'
 
 type Particle = {
   id: number
@@ -73,9 +74,7 @@ export function InteractiveBanner() {
       localStorage.setItem('boost-count', String(newCount))
     } catch { /* empty */ }
 
-    const w = window as { dataLayer?: Record<string, unknown>[] }
-    w.dataLayer?.push({
-      event: 'interaction',
+    trackEvent('interaction', {
       interaction_type: 'banner_click',
       label: 'boost_portfolio',
       value: newCount,

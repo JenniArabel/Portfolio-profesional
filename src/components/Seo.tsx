@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { profile } from '../data/cv'
 import { useLanguage } from '../i18n/LanguageContext'
 
@@ -17,7 +18,9 @@ export function Seo() {
     jobTitle: profile.title,
     description: data.summary.join(' '),
     url,
-    image: `${url}/favicon.svg`,
+    image: `${url}/og-image.png`,
+    email: profile.email,
+    telephone: profile.phone.replace(/\s/g, ''),
     sameAs: [profile.linkedin, profile.github],
     address: {
       '@type': 'PostalAddress',
@@ -57,12 +60,12 @@ export function Seo() {
     })),
   }
 
+  useEffect(() => {
+    document.getElementById('ld-person')!.textContent = JSON.stringify(personSchema)
+  })
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
