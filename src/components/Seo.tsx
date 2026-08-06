@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { profile } from '../data/cv'
 import { useLanguage } from '../i18n/LanguageContext'
 
@@ -59,12 +60,12 @@ export function Seo() {
     })),
   }
 
+  useEffect(() => {
+    document.getElementById('ld-person')!.textContent = JSON.stringify(personSchema)
+  })
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

@@ -46,8 +46,8 @@
       rel="stylesheet"
     />
     <title>Jennifer Arabel | Frontend Developer — React &amp; Angular</title>
-    <!-- JSON-LD estático para primer crawl de Googlebot (React lo sobreescribe al renderizar) -->
-    <script type="application/ld+json">
+    <!-- JSON-LD estático para primer crawl de Googlebot; Seo.tsx actualiza este mismo script por id tras hidratar -->
+    <script type="application/ld+json" id="ld-person">
     {
       "@context": "https://schema.org",
       "@type": "Person",
