@@ -7,31 +7,37 @@
     <meta name="theme-color" content="#09090b" />
     <meta
       name="description"
-      content="Portfolio de Jennifer Arabel — Frontend Developer especializada en Angular, TypeScript y microfrontends. Curicó, Chile."
+      content="Jennifer Arabel — Frontend Developer especializada en React, Angular y TypeScript. Experiencia en microfrontends, Single-SPA y APIs REST. Curicó, Chile."
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Jennifer Arabel | Frontend Developer" />
+    <meta property="og:title" content="Jennifer Arabel | Frontend Developer — React &amp; Angular" />
     <meta
       property="og:description"
-      content="Portfolio de Jennifer Arabel — Frontend Developer especializada en Angular, TypeScript y microfrontends. Curicó, Chile."
+      content="Jennifer Arabel — Frontend Developer especializada en React, Angular y TypeScript. Experiencia en microfrontends, Single-SPA y APIs REST. Curicó, Chile."
     />
     <meta property="og:url" content="https://portfolio-jennifer-arabel.vercel.app/" />
-    <meta property="og:image" content="https://portfolio-jennifer-arabel.vercel.app/favicon.svg" />
+    <meta property="og:image" content="https://portfolio-jennifer-arabel.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CL" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jennifer Arabel | Frontend Developer" />
+    <meta name="twitter:title" content="Jennifer Arabel | Frontend Developer — React &amp; Angular" />
     <meta
       name="twitter:description"
-      content="Portfolio de Jennifer Arabel — Frontend Developer especializada en Angular, TypeScript y microfrontends. Curicó, Chile."
+      content="Jennifer Arabel — Frontend Developer especializada en React, Angular y TypeScript. Experiencia en microfrontends, Single-SPA y APIs REST. Curicó, Chile."
     />
-    <meta name="twitter:image" content="https://portfolio-jennifer-arabel.vercel.app/favicon.svg" />
+    <meta name="twitter:image" content="https://portfolio-jennifer-arabel.vercel.app/og-image.png" />
 
-    <!-- Canonical -->
+    <!-- Canonical + hreflang -->
     <link rel="canonical" href="https://portfolio-jennifer-arabel.vercel.app/" />
+    <link rel="alternate" hreflang="es" href="https://portfolio-jennifer-arabel.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://portfolio-jennifer-arabel.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://portfolio-jennifer-arabel.vercel.app/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +45,33 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Sora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Jennifer Arabel | Frontend Developer</title>
+    <title>Jennifer Arabel | Frontend Developer — React &amp; Angular</title>
+    <!-- JSON-LD estático para primer crawl de Googlebot (React lo sobreescribe al renderizar) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jennifer Arabel",
+      "givenName": "Jennifer",
+      "familyName": "Arabel",
+      "jobTitle": "Frontend Developer",
+      "description": "Frontend Developer Junior con experiencia en React, Angular y arquitectura de microfrontends, enfocada en construir aplicaciones escalables, mantenibles y alineadas a buenas prácticas.",
+      "url": "https://portfolio-jennifer-arabel.vercel.app",
+      "image": "https://portfolio-jennifer-arabel.vercel.app/og-image.png",
+      "email": "jennifer.arabel@gmail.com",
+      "telephone": "+56930254223",
+      "sameAs": [
+        "https://www.linkedin.com/in/jenniferarabel",
+        "https://github.com/JenniArabel"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curicó",
+        "addressCountry": "CL"
+      },
+      "knowsAbout": ["React", "Angular", "TypeScript", "JavaScript", "Microfrontends", "Single-SPA", "REST APIs", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "PrimeNG"]
+    }
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
