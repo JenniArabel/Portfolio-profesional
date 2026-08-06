@@ -17,7 +17,9 @@ export function Seo() {
     jobTitle: profile.title,
     description: data.summary.join(' '),
     url,
-    image: `${url}/favicon.svg`,
+    image: `${url}/og-image.png`,
+    email: profile.email,
+    telephone: profile.phone.replace(/\s/g, ''),
     sameAs: [profile.linkedin, profile.github],
     address: {
       '@type': 'PostalAddress',
