@@ -15,7 +15,7 @@ El proyecto está construido con:
 | Plugin React en Vite | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) |
 | Calidad de código | [ESLint](https://eslint.org/) con [typescript-eslint](https://typescript-eslint.io/) y reglas para React Hooks y React Refresh |
 
-Tipografías del sitio: [DM Sans](https://fonts.google.com/specimen/DM+Sans) y [Sora](https://fonts.google.com/specimen/Sora) (Google Fonts).
+Tipografías del sitio: [DM Sans](https://fonts.google.com/specimen/DM+Sans) y [Sora](https://fonts.google.com/specimen/Sora), self-hosteadas localmente vía `@fontsource` (sin requests a Google Fonts → mejor rendimiento y LCP).
 
 ## Requisitos
 
